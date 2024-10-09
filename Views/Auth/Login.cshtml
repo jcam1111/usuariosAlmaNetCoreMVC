@@ -1,0 +1,14 @@
+﻿
+@model Usuario
+
+<form asp-action="Login" method="post">
+    <div>
+        <label>Nombre de Usuario:</label>
+        <input type="text" name="nombreUsuario" required />
+    </div>
+    <div>
+        <label>Contraseña:</label>
+        <input type="password" name="password" required />
+    </div>
+    <button type="submit">Iniciar Sesión</button>
+</form>
