@@ -48,6 +48,7 @@ namespace UsuariosAlmaNetCoreMVC.Controllers
         // GET: Personas/Create
         public IActionResult Create()
         {
+            ViewData["TipoIdentificacionId"] = new SelectList( _context.TiposIdentificacion.ToList(), "Id", "Nombre");
             return View();
         }
 
@@ -64,6 +65,7 @@ namespace UsuariosAlmaNetCoreMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TipoIdentificacionId"] = new SelectList(await _context.TiposIdentificacion.ToListAsync(), "Id", "Nombre", persona.TipoIdentificacionId);
             return View(persona);
         }
 
@@ -80,6 +82,7 @@ namespace UsuariosAlmaNetCoreMVC.Controllers
             {
                 return NotFound();
             }
+            ViewData["TipoIdentificacionId"] = new SelectList(await _context.TiposIdentificacion.ToListAsync(), "Id", "Nombre", persona.TipoIdentificacionId);
             return View(persona);
         }
 
@@ -115,6 +118,7 @@ namespace UsuariosAlmaNetCoreMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TipoIdentificacionId"] = new SelectList(await _context.TiposIdentificacion.ToListAsync(), "Id", "Nombre", persona.TipoIdentificacionId);
             return View(persona);
         }
 
