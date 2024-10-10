@@ -34,9 +34,12 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TipoIdentificacion" class="control-label"></label>
+               @* <label asp-for="TipoIdentificacion" class="control-label"></label>
                 <input asp-for="TipoIdentificacion" class="form-control" />
-                <span asp-validation-for="TipoIdentificacion" class="text-danger"></span>
+                <span asp-validation-for="TipoIdentificacion" class="text-danger"></span>*@
+                <label asp-for="TipoIdentificacionId"></label>
+                <select asp-for="TipoIdentificacionId" class="form-control" asp-items="ViewBag.TipoIdentificacionId"></select>
+                <span asp-validation-for="TipoIdentificacionId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FechaCreacion" class="control-label"></label>

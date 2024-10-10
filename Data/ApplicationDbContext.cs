@@ -12,6 +12,13 @@ namespace UsuariosAlmaNetCoreMVC.Data
 
         public DbSet<Persona> Personas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<TipoIdentificacion> TiposIdentificacion { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Aquí puedes hacer configuraciones adicionales si es necesario
+            base.OnModelCreating(modelBuilder);
+        }
     }
 
 }
